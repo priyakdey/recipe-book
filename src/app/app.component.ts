@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   navigationSelected: string;
 
-  // By default recipe list should be displayed
+  // By default recipe list should be displayed on start-up
   ngOnInit() {
     this.navigationSelected = 'recipe';
   }
 
   decideNavigationSelected(navigationSelected: string) {
     this.navigationSelected = navigationSelected;
-    console.log(this.navigationSelected);
   }
 }
