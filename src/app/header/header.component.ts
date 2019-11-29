@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
     title = 'Recipe Book';
+    @Output() navigationSelectedEvent: EventEmitter<string> = new EventEmitter<string>();
+
+    onSelectShowRecipe() {
+        this.navigationSelectedEvent.emit('recipe');
+    }
+
+    onSelectShowShoppingList() {
+        this.navigationSelectedEvent.emit('shopping-list');
+    }
 }
