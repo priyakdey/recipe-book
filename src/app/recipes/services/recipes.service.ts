@@ -1,6 +1,6 @@
 import { EventEmitter } from '@angular/core';
 
-import { Recipe } from '../models/recipe.model';
+import { Recipe } from '../../models/recipe.model';
 
 export class RecipeService {
   // Hold Dummy Data Stub

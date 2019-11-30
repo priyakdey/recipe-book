@@ -18,8 +18,6 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit() { }
 
   onAddItem() {
-    console.log(this.nameInputRef.nativeElement.value);
-    console.log(this.amountInputRef.nativeElement.value);
     const ingredient = {
       name: this.nameInputRef.nativeElement.value,
       amount: this.amountInputRef.nativeElement.value
