@@ -5,10 +5,7 @@ import { EventEmitter } from '@angular/core';
 export class ShoppingListService {
     ingredientsChanged: EventEmitter<Ingredient[]> = new EventEmitter<Ingredient[]>();
 
-    private ingredients: Ingredient[] = [
-        new Ingredient('Apples', 5),
-        new Ingredient('Tomatoes', 10)
-    ];
+    private ingredients: Ingredient[] = [];
 
     onIngredientAddEvent: EventEmitter<Ingredient> = new EventEmitter<Ingredient>();
 
@@ -18,5 +15,10 @@ export class ShoppingListService {
     onIngredientAdd(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.getIngredients());
+    }
+
+    addIngredients(ingredients: Ingredient[]) {
+        this.ingredients.push(...ingredients); // ES6 way to spread an array into individual elements
+        this.ingredientsChanged.emit(this.ingredients.slice());
     }
 }
